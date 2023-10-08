@@ -6,4 +6,4 @@ from .default_attr import Default
 
 class DpDeals(BaseModel):
     Start_deal: datetime = Default.date_default
-    Status_deal: List[str] = [""] * 10
+    Status_deal: List[str] = [""] * 3

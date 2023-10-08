@@ -7,7 +7,9 @@ from .Deals import DpDeals
 class Response(BaseModel):
     # Данные с класса Request
     Application: dict
+    Antifraud: dict
     Deals: dict
+
 
     # Дополняем атрибутами, которые должны войти в ответ клиенту
     id: int
