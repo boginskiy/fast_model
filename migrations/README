@@ -1,0 +1,7 @@
+Generic single-database configuration.
+
+### Создание миграций
+    alembic init migrations
+
+###
+    alembic revision --autogenerate -m "First"

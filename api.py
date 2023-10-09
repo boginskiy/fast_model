@@ -1,9 +1,8 @@
 import shutil
 from typing import List
-from fastapi import FastAPI, UploadFile, File, APIRouter, Form, Request
+from fastapi import FastAPI, UploadFile, File, APIRouter, Form, Request as _Request_
 from fastapi.responses import JSONResponse
-
-# from data_schemas.Request import Request
+from data_schemas.Request import Request
 from data_schemas.Response import Response
 from data_schemas.Request import UploadVideo, User, GetVideo, Message
 
@@ -34,7 +33,7 @@ async def upload_image(files: List[UploadFile] = File(...)):
 
 
 @video_router.get("/video", response_model=GetVideo,
-                  responses={404: {"model": Message}})
+                  responses={404: {"models_db": Message}})
 async def get_video():
     user = {'id': 25, 'name': 'Pipec'}
     video = {'title': "Test", 'description': 'Description'}
@@ -44,25 +43,35 @@ async def get_video():
 
 @video_router.get("/test")
 async def get_test(req: Request):
-
     return {"msg": 123}
 
 
 
-# @video_router.post('/', response_model=Response)
-# async def input_application(payload: Request):
-#     # Делаем словарь для дальнейшей обработки
-#     data = payload.dict()
-#
-#     # Обработка данных
-#     # result_1 = main_func(data)
-#
-#     # Перекладываем значения с Request в Response
-#     req_Application = data.get('Application')
-#     req_Antifraud = data.get('Antifraud')
-#     req_Deals = data.get('Deals')
-#
-#     return Response(Application=req_Application,
-#                     Antifraud=req_Antifraud,
-#                     Deals=req_Deals,
-#                     id=666)
+@video_router.post('/')  # response_model=Response
+async def input_application(payload: _Request_):
+    # Делаем словарь для дальнейшей обработки
+    # data = payload
+    # print(data)
+
+    data = await payload.json()
+
+    print(data)
+
+    # data = Request(**data)
+    # print(data)
+
+    # Обработка данных
+    # result_1 = main_func(data)
+
+    # Перекладываем значения с Request в Response
+    # req_Application = data.get('Application')
+    # req_Antifraud = data.get('Antifraud')
+    # req_Deals = data.get('Deals')
+
+    return await payload.json()
+
+        # (
+        # Response(Application=req_Application,
+        #             Antifraud=req_Antifraud,
+        #             Deals=req_Deals,
+        #             id=666))
