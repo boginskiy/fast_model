@@ -1,0 +1,12 @@
+УСТАНОВКА SQLAlchemy ORM -> pip install sqlalchemy
+
+МИГРАЦИИ:
+-Миграции / предварительно установить ~ alembic
+-Cоздания папки миграции -> alembic init migrations
+-Создать файл миграции -> alembic revision --autogenerate -m "<Second>"
+-Применить созданную миграцию -> alembic upgrade head
+
+Oшибка при создании миграций:
+-FAILED: Target database is not up to date -> alembic stamp head
+
+ЗАПУСК ПРОЕКТА: uvicorn main:app --reload

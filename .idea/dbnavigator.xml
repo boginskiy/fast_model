@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DataExportManager">
@@ -30,32 +30,57 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="980ccb94-0023-484b-b55c-826663f35b22">
-      <console name="Connection" type="STANDARD" schema="fastmodel" session="Main" />
+    <connection id="5fa8be03-130c-452c-a3c1-f6595c3c00e7">
+      <console name="Connection" type="STANDARD" schema="postgres" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="980ccb94-0023-484b-b55c-826663f35b22" object-ref="schemas/public/tables/alembic_version" />
-    </open-files>
+    <open-files />
+  </component>
+  <component name="DBNavigator.Project.DatabaseSessionManager">
+    <connection id="5fa8be03-130c-452c-a3c1-f6595c3c00e7" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="980ccb94-0023-484b-b55c-826663f35b22" dataset="public.alembic_version" active-filter-id="EMPTY_FILTER">
-      <filter id="28885184-c224-45b4-9fad-8403c458f16e" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
-        <condition column="version_num" operator="=" value="" active="true" />
+    <filter-actions connection-id="5fa8be03-130c-452c-a3c1-f6595c3c00e7" dataset="public.alembic_version" active-filter-id="c026436c-ea25-4e5f-b536-e5e4886de5aa">
+      <filter id="c026436c-ea25-4e5f-b536-e5e4886de5aa" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="version_num" operator="=" value="" active="false" />
       </filter>
     </filter-actions>
+    <filter-actions connection-id="5fa8be03-130c-452c-a3c1-f6595c3c00e7" dataset="public.Parsers" active-filter-id="18bfe280-bcc1-45a8-8f94-add910d01e72">
+      <filter id="18bfe280-bcc1-45a8-8f94-add910d01e72" name="Filter" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="" active="false" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="5fa8be03-130c-452c-a3c1-f6595c3c00e7" dataset="public.User" active-filter-id="9c98c09d-64a7-42e3-8460-13b8c6239c86">
+      <filter id="9c98c09d-64a7-42e3-8460-13b8c6239c86" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="" active="false" />
+      </filter>
+    </filter-actions>
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.MethodExecutionManager">
+    <method-browser />
+    <execution-history>
+      <group-entries value="true" />
+      <execution-inputs />
+    </execution-history>
+    <argument-values-cache />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
     <filters />
   </component>
+  <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
+    <recently-used-interfaces />
+  </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="980ccb94-0023-484b-b55c-826663f35b22" active="true" signed="true">
+      <connection id="5fa8be03-130c-452c-a3c1-f6595c3c00e7" active="true" signed="true">
         <database>
           <name value="Connection" />
           <description value="" />
@@ -68,7 +93,7 @@
           <url-type value="DATABASE" />
           <host value="localhost" />
           <port value="5432" />
-          <database value="fastmodel" />
+          <database value="fastmod" />
           <tns-folder value="" />
           <tns-profile value="" />
           <type value="USER_PASSWORD" />
@@ -535,5 +560,8 @@
         </visibility-settings>
       </environment>
     </general-settings>
+  </component>
+  <component name="DBNavigator.Project.StatementExecutionManager">
+    <execution-variables />
   </component>
 </project>
