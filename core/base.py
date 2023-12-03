@@ -1,3 +1,3 @@
-from .db import Base
-from models_db.models import Post
-from user.models import User
+from .db import metadata
+from fast_model.models import parsers
+from user.models import users

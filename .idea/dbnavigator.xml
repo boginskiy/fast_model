@@ -49,7 +49,7 @@
         <condition column="version_num" operator="=" value="" active="false" />
       </filter>
     </filter-actions>
-    <filter-actions connection-id="5fa8be03-130c-452c-a3c1-f6595c3c00e7" dataset="public.Parsers" active-filter-id="18bfe280-bcc1-45a8-8f94-add910d01e72">
+    <filter-actions connection-id="5fa8be03-130c-452c-a3c1-f6595c3c00e7" dataset="public.Parsers" active-filter-id="">
       <filter id="18bfe280-bcc1-45a8-8f94-add910d01e72" name="Filter" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="id" operator="=" value="" active="false" />
       </filter>
