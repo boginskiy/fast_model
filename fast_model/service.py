@@ -5,15 +5,15 @@ from datetime import datetime
 
 
 async def all_posts():
-    post = await database.fetch_all(parsers.select())
-    return post
+    posts = await database.fetch_all(parsers.select())
+    return posts
 
 
 async def create_parser(item: PostCreate):
-    date_born = datetime.now()
-    parser = parsers.insert().values(title=item.title, text=item.text, date=date_born)
+    # date_born = datetime.now()
+    parser = parsers.insert().values(title=item.title, text=item.text, date=item.date)  # date=date_born
     parser_id = await database.execute(parser)
-    return PostList(**item.dict(), id=parser_id, date=date_born)
+    return PostList(**item.dict(), id=parser_id)  # date=date_born
 
 
 # async def all_posts(post_id: int):

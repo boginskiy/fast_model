@@ -1,28 +1,29 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Table
-from core.db import metadata
+from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Table, DateTime
+from core.db import metadata, Base
+from datetime import datetime
 
 
-users = Table(
-    "users",
-    metadata,
-    Column("id", Integer, primary_key=True),
-    Column("email", String, unique=True, index=True),
-    Column("hashed_password", String),
-    Column("is_active", Boolean, default=True)
-)
+# users = Table(
+#     "users",
+#     metadata,
+#     Column("id", Integer, primary_key=True),
+#     Column("email", String, unique=True, index=True),
+#     Column("hashed_password", String),
+#     Column("is_active", Boolean, default=True)
+# )
+#
+#
+# items = Table(
+#     "items",
+#     metadata,
+#     Column("id", Integer, primary_key=True),
+#     Column("title", String, index=True),
+#     Column("description", String),
+#     Column("owner_id", Integer, ForeignKey("users.id"))
+# )
 
-
-items = Table(
-    "items",
-    metadata,
-    Column("id", Integer, primary_key=True),
-    Column("title", String, index=True),
-    Column("description", String),
-    Column("owner_id", Integer, ForeignKey("users.id"))
-)
-
-# class User(metadata):
-#     __tablename__ = 'User'
+# class Users(Base):
+#     __tablename__ = 'users'
 #
 #     id = Column(Integer, primary_key=True, index=True, unique=True)
 #     name = Column(String, unique=True)
@@ -34,4 +35,4 @@ items = Table(
 #
 # # без этого не будет работать ассинк. Потому что работа именно
 # # c таблицами.
-# user = User.__table__
+# users = Users.__table__

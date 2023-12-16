@@ -20,7 +20,7 @@ async def all_posts_list():
     return posts
 
 
-@router.post("/home")  # response_model=List[PostList]
+@router.post("/home", response_model=PostList)  #
 async def create_appl(item: PostCreate):
     parser = await create_parser(item=item)
     return parser
