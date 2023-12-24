@@ -1,9 +1,10 @@
 import sys
 from logging.config import fileConfig
-from sqlalchemy import engine_from_config, pool
-from src.core import SQLALCHEMY_DATABASE_URL, metadata
+from sqlalchemy import engine_from_config
+from sqlalchemy import pool
+from src.core import SQLALCHEMY_DATABASE_URL
 from alembic import context
-
+from src.core import Base
 
 # Нужно для того чтобы было корректное обращение к пакетам. Например core
 # в противном случае поиск будет осуществляться в вирт окружении проекта.
@@ -22,7 +23,7 @@ if config.config_file_name is not None:
 # add your models_db's MetaData object here
 # for 'autogenerate' support
 # from myapp import mymodel
-target_metadata = metadata
+target_metadata = Base.metadata
 # target_metadata = None
 
 # other values from the config, defined by the needs of env.py,

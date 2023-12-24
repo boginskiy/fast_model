@@ -1,9 +1,10 @@
 import sys
 from logging.config import fileConfig
-from sqlalchemy import engine_from_config, pool
-from src.core import SQLALCHEMY_DATABASE_URL, metadata
+from sqlalchemy import engine_from_config
+from sqlalchemy import pool
+from src.core import SQLALCHEMY_DATABASE_URL
 from alembic import context
-
+from src.core import metadata
 
 # Нужно для того чтобы было корректное обращение к пакетам. Например core
 # в противном случае поиск будет осуществляться в вирт окружении проекта.
